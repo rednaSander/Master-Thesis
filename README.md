@@ -29,8 +29,8 @@ This pipeline consists of two main steps:
 git clone https://github.com/yourusername/peptidoform2speclib.git
 cd peptidoform2speclib
 
-# Install dependencies
-pip install -r < dependency.txt >
+# Install dependencies (for each of the dependency files)
+pip install -r <dependencies.txt>
 ```
 
 ### Usage
