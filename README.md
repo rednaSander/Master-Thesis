@@ -95,6 +95,8 @@ The configuration file (JSON format) controls both steps of the pipeline. Here's
 
 #### Configuration Parameters
 
+The configuration files of each spectral library that was tested in this study can be found under "library_configs" of this repo.    
+
 ##### General Parameters
 - `proteome_fastas`: List of FASTA files containing protein sequences
 - `peptides`: Whether to use peptide-based (true) or full protein-based (false) prediction
@@ -138,3 +140,50 @@ The pipeline generates:
    - Theoretical MS2 spectra
    - Predicted retention times
    - Predicted collision cross-sections (if enabled)
+
+## Results
+All raw search engine data and associated files are available via OneDrive: 
+
+https://ugentbe-my.sharepoint.com/:f:/r/personal/sander_heyndrickx_ugent_be/Documents/Results?csf=1&web=1&e=VmO1kz
+
+The data is organized as follows:
+```
+results.zip
+├── Orbitrap AIF
+│   ├── diann
+│   │   └── raw search engine outputs
+│   └── alphadia
+│       └── raw search engine outputs 
+├── TTOF6600 SWATH
+│   ├── diann
+│   │   └── raw search engine outputs
+│   └── alphadia
+│       └── raw search engine outputs
+├── TimsTOF Pasef
+│   └── diann
+│       └── raw search engine outputs (with XICs)
+│       
+└── Orbitrap Exploris 480
+    ├── diann
+    │   └── raw search engine outputs
+    └── alphadia
+        └── raw search engine outputs
+```
+Data from other sources such as UniProt, PhosphoSitePlus, PhosphoLingo Training data, PhosphoLingo Predictions can be found in data.zip:
+```
+data.zip
+├── proteome fasta files
+├── phospholingo models training data
+├── phospholingo predictions used to make the spectral libraries
+└── phosphosite-plus literature data
+```
+### Data Analysis
+All data analysis scripts (jupyter notebook files) can be found in the "data analysis" folder of this repo. Here is an overview of each file: 
+
+| Section   | Notebooks | Description |
+|-----------|-----------|-------------|
+| 7.1, 7.2 | Figures_6_7_9.ipynb, Figure_8.ipynb | Method Validation and Reduction in Computational Resources |
+| 7.3       | regular_samples_diann.ipynb, regular_samples_alphadia.ipynb | Analysis of regular sample datasets |
+| 7.4, 7.6 | enriched_samples_diann.ipynb, enriched_samples_alphadia.ipynb | Analysis of enriched sample datasets, Comparing performance of different predictive models |
+| 7.5, 7.7 | Figure_17_19.ipynb | Modification localisation scores, Impact of filtering on novel phosphopeptide discovery |
+| 7.8       | validation_diann.ipynb, validation_alphadia.ipynb | Literature validation of identified modification sites |
