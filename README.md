@@ -187,3 +187,5 @@ All data analysis scripts (jupyter notebook files) can be found in the "data ana
 | 7.4, 7.6 | section_7.4_DIANN_7.6, section_7.4_AlphaDIA.ipynb | Analysis of enriched sample datasets, Comparing performance of different predictive models |
 | 7.5, 7.7 | section_7.5, section_7.7 | Modification localisation scores, Impact of filtering on novel phosphopeptide discovery |
 | 7.8       | section_7.8_DIANN, section_7.8_AlphaDIA  | Literature validation of identified modification sites |
+
+Figure 18 was made by usings DIANN's build in Viewer with the XIC's from the TimsTOF pasef analyses (available via Zenodo)
