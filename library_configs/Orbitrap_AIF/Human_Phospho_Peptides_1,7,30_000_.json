@@ -1,0 +1,46 @@
+{
+    "proteome_fastas": ["/home/sander/apps/slim/general_data/UP000005640_9606_prot_id.fasta"],
+    "peptides": true,
+    "missed_cleavages": 1,
+    "min_length": 7,
+    "max_length": 30,
+    "control_library": false,
+    "predictions": [
+        {
+            "model": "/home/sander/apps/slim/models/PhosphoLingo_Y_new.ckpt",
+            "pred_csv": "/home/sander/apps/slim/ptm_predictions/Y_Phospho_Human_Peptides_1,7,30_Preds.csv",
+            "PTM": "Y[Phospho]",
+            "threshold": 0.0
+        },
+        {
+            "model": "/home/sander/apps/slim/models/PhosphoLingo_ST_new.ckpt",
+            "pred_csv": "/home/sander/apps/slim/ptm_predictions/ST_Phospho_Human_Peptides_1,7,30_Preds.csv",
+            "PTM": "ST[Phospho]",
+            "threshold": 0.0
+        }
+    ],
+    "modifications": [
+        {
+            "label": "Oxidation",
+            "amino_acid": "M",
+            "fixed": false
+        },
+        {
+            "label": "Carbamidomethyl",
+            "amino_acid": "C",
+            "fixed": true
+        }
+    ],
+    "max_variable_mods": 1,
+    "charges": [1, 2, 3, 4],
+    "add_retention_time": true,
+    "add_ion_mobility": true,
+    "mz_precursor_range": [300, 1800],
+    "ms2pip_model": "HCD",
+    "batch_size": 100000,
+    "processes": 10,
+    "frag_mass_lower": 200.0,
+    "frag_mass_upper": 1800.0,
+    "out_path": "/public/compomics/sander/regular/Orbitrap_AIF/speclibs/",
+    "out_name": "Human_Phospho_000_speclib"
+}

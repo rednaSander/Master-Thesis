@@ -1,0 +1,41 @@
+{
+    "control_library": false,
+    "proteome_fastas": ["/home/sander/apps/slim/general_data/UP000005640_9606_prot_id.fasta"],
+    "peptides": true,
+    "missed_cleavages": 2,
+    "min_length": 7,
+    "max_length": 30,
+    "predictions": [
+        {
+            "model": "/home/sander/apps/slim/models/PhosphoLingo_Y_new.ckpt",
+            "pred_csv": "/home/sander/apps/slim/ptm_predictions/Y_Phospho_Human_Peptides_2,7,30_Preds.csv",
+            "PTM": "Y[UniMod:21]",
+            "threshold": 0.00
+        },
+        {
+            "model": "/home/sander/apps/slim/models/PhosphoLingo_ST_new.ckpt",
+            "pred_csv": "/home/sander/apps/slim/ptm_predictions/ST_Phospho_Human_Peptides_2,7,30_Preds.csv",
+            "PTM": "ST[UniMod:21]",
+            "threshold": 0.00
+        }
+    ],
+    "modifications": [
+        {
+            "label": "UniMod:4",
+            "amino_acid": "C",
+            "fixed": true
+        }
+    ],
+    "max_variable_mods": 3,
+    "charges": [2, 3],
+    "add_retention_time": true,
+    "add_ion_mobility": true,
+    "mz_precursor_range": [0, 1800],
+    "ms2pip_model": "timsTOF2024",
+    "batch_size": 100000,
+    "processes": 4,
+    "frag_mass_lower": 100.0,
+    "frag_mass_upper": 1700.0,
+    "out_path": "/public/compomics/sander/enriched/timsTOF_Pasef/speclibs",
+    "out_name": "Human_Enriched_000_speclib"
+}
