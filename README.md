@@ -1,4 +1,133 @@
 # Master-Thesis
+# Peptidoform2SpecLib Guide
 
-## Introduction
-TODO
+A comprehensive tool for generating in-silico spectral libraries that integrates PhosphoLingo predictions with peptide modifications to create high-quality spectral libraries for DIA mass spectrometry experiments.
+This tool uses a modified version of PhosphoLingo (:https://github.com/jasperzuallaert/PhosphoLingo), originally developed by Dr. Jasper Zuallaert for phosphorylation site prediction using protein language models and convolutional neural networks. The modifications optimize PhosphoLingo for spectral library generation.
+
+### Overview
+
+This pipeline consists of two main steps:
+
+1. **PhosphoLingo Prediction**: Predicts modification sites on peptides using trained models 
+2. **Peptidoform2SpecLib**: Generates spectral libraries incorporating PhosphoLingo predictions along with fixed and variable modifications
+
+### Features
+
+- In-silico protein digestion with configurable parameters
+- Integration of PhosphoLingo predictions for targeted modifications
+- Support for variable and fixed modifications
+- Customizable charge state assignments
+- Theoretical spectra generation using MS²PIP
+- Retention time predictions using DeepLC
+- Optional ion mobility predictions with IM2Deep
+- Centralized configuration system
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/peptidoform2speclib.git
+cd peptidoform2speclib
+
+# Install dependencies (requirements.txt should be provided)
+pip install -r requirements.txt
+```
+
+### Usage
+
+The workflow requires running two commands sequentially:
+
+1. First, run PhosphoLingo to generate modification predictions:
+```bash
+python phospholingo predict <path to library config>
+```
+
+2. Then, run Peptidoform2SpecLib to generate the spectral library:
+```bash
+python peptidoform2speclib.py --config <path to library config>
+```
+
+### Configuration
+
+The configuration file (JSON format) controls both steps of the pipeline. Here's an example structure:
+
+```json
+{
+    "proteome_fastas": ["path/to/proteome.fasta"],
+    "missed_cleavages": 1,
+    "min_length": 7,
+    "max_length": 30,
+    "predictions": [
+        {
+            "pred_csv": "output/predictions.csv",
+            "PTM": "Y[Phospho]",
+            "threshold": 0.7,
+            "model": "models/phospho_model.pt"
+        }
+    ],
+    "modifications": [
+        {
+            "label": "Oxidation",
+            "amino_acid": "M",
+            "fixed": false
+        },
+        {
+            "label": "Carbamidomethyl",
+            "amino_acid": "C",
+            "fixed": true
+        }
+    ],
+    "max_variable_mods": 3,
+    "charges": [1, 2, 3, 4],
+    "add_retention_time": true,
+    "add_ion_mobility": true,
+    "mz_precursor_range": [300, 1800],
+    "model": "HCD",
+    "batch_size": 100000,
+    "processes": 1,
+    "out_path": "output/",
+    "out_name": "speclib"
+}
+```
+
+#### Configuration Parameters
+
+##### General Parameters
+- `proteome_fastas`: List of FASTA files containing protein sequences
+- `missed_cleavages`: Number of allowed missed cleavages
+- `min_length`, `max_length`: Peptide length constraints
+
+##### PhosphoLingo Parameters
+- `predictions`: List of modification predictions to generate
+  - `pred_csv`: Output file for predictions
+  - `PTM`: Modification type and residue
+  - `threshold`: Confidence threshold for predictions
+  - `model`: Path to trained model
+
+##### Modification Parameters
+- `modifications`: List of modifications to consider
+  - `label`: Modification name
+  - `amino_acid`: Target residue
+  - `fixed`: Boolean indicating if modification is fixed
+- `max_variable_mods`: Maximum variable modifications per peptide
+
+##### Spectral Library Parameters
+- `charges`: Charge states to consider
+- `add_retention_time`: Enable retention time prediction
+- `add_ion_mobility`: Enable ion mobility prediction
+- `mz_precursor_range`: Mass range for precursors
+- `model`: MS2 prediction model type
+- `batch_size`: Processing batch size
+- `processes`: Number of parallel processes
+- `out_path`: Output directory
+- `out_name`: Output filename
+
+### Output
+
+The pipeline generates:
+1. CSV files containing modification predictions from PhosphoLingo
+2. A spectral library file (.spectronaut.tsv format) containing:
+   - Peptide sequences with modifications
+   - Theoretical MS2 spectra
+   - Predicted retention times
+   - Predicted collision cross-sections (if enabled)
