@@ -95,7 +95,7 @@ The configuration file (JSON format) controls both steps of the pipeline. Here's
 
 #### Configuration Parameters
 
-The configuration files of each spectral library that was tested in this study can be found under "library_configs" of this repo.    
+The configuration files of each spectral library that was used in this thesis can be found under "library_configs" of this repo.    
 
 ##### General Parameters
 - `proteome_fastas`: List of FASTA files containing protein sequences
