@@ -2,7 +2,7 @@
 ## Peptidoform2SpecLib Guide
 
 A comprehensive tool for generating in-silico spectral libraries that integrates PhosphoLingo predictions with peptide modifications to create high-quality spectral libraries for DIA mass spectrometry experiments.
-This tool uses a modified version of PhosphoLingo (:https://github.com/jasperzuallaert/PhosphoLingo), originally developed by Dr. Jasper Zuallaert for phosphorylation site prediction using protein language models and convolutional neural networks. The modifications optimize PhosphoLingo for spectral library generation.
+This tool uses a modified version of PhosphoLingo (https://github.com/jasperzuallaert/PhosphoLingo), originally developed by Dr. Jasper Zuallaert for phosphorylation site prediction using protein language models and convolutional neural networks. The modifications optimize PhosphoLingo for spectral library generation.
 
 ### Overview
 
