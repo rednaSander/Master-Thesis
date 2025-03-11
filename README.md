@@ -1,5 +1,5 @@
 # Master-Thesis
-# Peptidoform2SpecLib Guide
+## Peptidoform2SpecLib Guide
 
 A comprehensive tool for generating in-silico spectral libraries that integrates PhosphoLingo predictions with peptide modifications to create high-quality spectral libraries for DIA mass spectrometry experiments.
 This tool uses a modified version of PhosphoLingo (:https://github.com/jasperzuallaert/PhosphoLingo), originally developed by Dr. Jasper Zuallaert for phosphorylation site prediction using protein language models and convolutional neural networks. The modifications optimize PhosphoLingo for spectral library generation.
@@ -57,6 +57,7 @@ The configuration file (JSON format) controls both steps of the pipeline. Here's
     "missed_cleavages": 1,
     "min_length": 7,
     "max_length": 30,
+    "control_library": false,
     "predictions": [
         {
             "pred_csv": "output/predictions.csv",
@@ -82,9 +83,11 @@ The configuration file (JSON format) controls both steps of the pipeline. Here's
     "add_retention_time": true,
     "add_ion_mobility": true,
     "mz_precursor_range": [300, 1800],
-    "model": "HCD",
+    "frag_mass_lower": 200.0,
+    "frag_mass_upper": 1800.0,
+    "ms2pip_model": "HCD",
     "batch_size": 100000,
-    "processes": 1,
+    "processes": 10,
     "out_path": "output/",
     "out_name": "speclib"
 }
@@ -94,15 +97,17 @@ The configuration file (JSON format) controls both steps of the pipeline. Here's
 
 ##### General Parameters
 - `proteome_fastas`: List of FASTA files containing protein sequences
+- `peptides`: Whether to use peptide-based (true) or full protein-based (false) prediction
 - `missed_cleavages`: Number of allowed missed cleavages
 - `min_length`, `max_length`: Peptide length constraints
+- `control_library`: Whether to generate a control library by random sampling
 
 ##### PhosphoLingo Parameters
 - `predictions`: List of modification predictions to generate
+  - `ms2pip_model`: Path to trained PhosphoLingo model
   - `pred_csv`: Output file for predictions
-  - `PTM`: Modification type and residue
-  - `threshold`: Confidence threshold for predictions
-  - `model`: Path to trained model
+  - `PTM`: Modification type and residue (e.g., "Y[Phospho]" or "ST[Phospho]")
+  - `threshold`: Confidence threshold for predictions (0.0-1.0)
 
 ##### Modification Parameters
 - `modifications`: List of modifications to consider
@@ -115,19 +120,30 @@ The configuration file (JSON format) controls both steps of the pipeline. Here's
 - `charges`: Charge states to consider
 - `add_retention_time`: Enable retention time prediction
 - `add_ion_mobility`: Enable ion mobility prediction
-- `mz_precursor_range`: Mass range for precursors
-- `model`: MS2 prediction model type
+- `mz_precursor_range`: Mass range for precursors [min, max]
+- `ms2pip_model`: MS2 prediction model type
 - `batch_size`: Processing batch size
 - `processes`: Number of parallel processes
+- `frag_mass_lower`: Lower mass limit for fragment ions
+- `frag_mass_upper`: Upper mass limit for fragment ions
 - `out_path`: Output directory
 - `out_name`: Output filename
 
-### Output
+## Output
 
 The pipeline generates:
 1. CSV files containing modification predictions from PhosphoLingo
-2. A spectral library file (.spectronaut.tsv format) containing:
+2. A spectral library file (.msp format) containing:
    - Peptide sequences with modifications
    - Theoretical MS2 spectra
    - Predicted retention times
    - Predicted collision cross-sections (if enabled)
+
+## Citation
+
+If you use this tool in your research, please cite:
+[Citation information to be added]
+
+## License
+
+[License information to be added]
