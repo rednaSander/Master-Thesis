@@ -142,9 +142,9 @@ The pipeline generates:
    - Predicted collision cross-sections (if enabled)
 
 ## Results
-All raw search engine data and associated files are available via OneDrive: 
+All raw search engine data and associated files are available via Zenodo: 
 
-https://ugentbe-my.sharepoint.com/:f:/r/personal/sander_heyndrickx_ugent_be/Documents/Results?csf=1&web=1&e=VmO1kz
+https://zenodo.org/records/15007519
 
 The data is organized as follows:
 ```
