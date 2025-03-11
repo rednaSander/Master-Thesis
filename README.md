@@ -188,4 +188,4 @@ All data analysis scripts (jupyter notebook files) can be found in the "data ana
 | 7.5, 7.7 | section_7.5, section_7.7 | Modification localisation scores, Impact of filtering on novel phosphopeptide discovery |
 | 7.8       | section_7.8_DIANN, section_7.8_AlphaDIA  | Literature validation of identified modification sites |
 
-Figure 18 was made by usings DIANN's build in Viewer with the XIC's from the TimsTOF pasef analyses (available via Zenodo)
+*Figure 16 from section 7.5 was created using DIA-NN's built-in viewer with the XICs from the timsTOF PASEF analyses (available via Zenodo).
