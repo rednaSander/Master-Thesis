@@ -4,7 +4,7 @@
 A comprehensive tool for generating in-silico spectral libraries that integrates modifications with deep learning predictions to create data driven spectral libraries for candidate modification site discovery in DIA mass spectrometry experiments.
 This tool uses a modified version of PhosphoLingo as the modification prediction engine, which has been adapted to prediction only on sites that occur on peptides that fall whithin library configurations. 
 
-For more information on phospholingo for example to training different models, please visist the PhosphoLingo Github repo:
+For more information on PhosphoLingo for example to training different models, please visist the PhosphoLingo Github repo:
 (https://github.com/jasperzuallaert/PhosphoLingo)
 
 ### Overview
