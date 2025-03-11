@@ -182,8 +182,8 @@ All data analysis scripts (jupyter notebook files) can be found in the "data ana
 
 | Section   | Notebooks | Description |
 |-----------|-----------|-------------|
-| 7.1, 7.2 | Figures_6_7_9.ipynb, Figure_8.ipynb | Method Validation and Reduction in Computational Resources |
-| 7.3       | regular_samples_diann.ipynb, regular_samples_alphadia.ipynb | Analysis of regular sample datasets |
-| 7.4, 7.6 | enriched_samples_diann.ipynb, enriched_samples_alphadia.ipynb | Analysis of enriched sample datasets, Comparing performance of different predictive models |
-| 7.5, 7.7 | Figure_17_19.ipynb | Modification localisation scores, Impact of filtering on novel phosphopeptide discovery |
-| 7.8       | validation_diann.ipynb, validation_alphadia.ipynb | Literature validation of identified modification sites |
+| 7.1, 7.2 | section_7.1_7.2., section_7.1 | Method Validation and Reduction in Computational Resources, Venn diagram: figure 8 |
+| 7.3       | section_7.3_DIANN.ipynb, section_7.3_AlphaDIA.ipynb | Analysis of regular sample datasets |
+| 7.4, 7.6 | section_7.4_DIANN_7.6, section_7.4_AlphaDIA.ipynb | Analysis of enriched sample datasets, Comparing performance of different predictive models |
+| 7.5, 7.7 | section_7.5, section_7.7 | Modification localisation scores, Impact of filtering on novel phosphopeptide discovery |
+| 7.8       | section_7.8_DIANN, section_7.8_AlphaDIA  | Literature validation of identified modification sites |
