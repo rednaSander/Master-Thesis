@@ -2,7 +2,8 @@
 ## Peptidoform2SpecLib Guide
 
 A comprehensive tool for generating in-silico spectral libraries that integrates modifications with deep learning predictions to create data driven spectral libraries for candidate modification site discovery in DIA mass spectrometry experiments.
-This tool uses a modified version of PhosphoLingo (https://github.com/jasperzuallaert/PhosphoLingo)
+This tool uses a modified version of PhosphoLingo (https://github.com/jasperzuallaert/PhosphoLingo) as the modification prediction engine, which has been adapted to prediction only on sites that occur on peptides that fall whithin library configurations. 
+
 ### Overview
 
 This pipeline consists of two main steps:
