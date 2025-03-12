@@ -185,7 +185,7 @@ All data analysis scripts (jupyter notebook files) can be found in the "data ana
 
 | Section   | Notebooks | Description |
 |-----------|-----------|-------------|
-| 7.1, 7.2 | section_7.1_7.2., section_7.1 | Method Validation and Reduction in Computational Resources, Venn diagram: figure 8 |
+| 7.1, 7.2 | section_7.1_7.2, section_7.1 | Method Validation and Reduction in Computational Resources, Venn diagram: figure 8 |
 | 7.3       | section_7.3_DIANN.ipynb, section_7.3_AlphaDIA.ipynb | Analysis of regular sample datasets |
 | 7.4, 7.6 | section_7.4_DIANN_7.6, section_7.4_AlphaDIA.ipynb | Analysis of enriched sample datasets, Comparing performance of different predictive models |
 | 7.5, 7.7 | section_7.5, section_7.7 | Modification localisation scores, Impact of filtering on novel phosphopeptide discovery |
