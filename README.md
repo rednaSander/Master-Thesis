@@ -185,10 +185,10 @@ All data analysis scripts (jupyter notebook files) can be found in the "data ana
 
 | Section   | Notebooks | Description |
 |-----------|-----------|-------------|
-| 7.1, 7.2 | section_7.1_7.2, section_7.1 | Method Validation and Reduction in Computational Resources, Venn diagram: figure 8 |
-| 7.3       | section_7.3_DIANN.ipynb, section_7.3_AlphaDIA.ipynb | Analysis of regular sample datasets |
-| 7.4, 7.6 | section_7.4_DIANN_7.6, section_7.4_AlphaDIA.ipynb | Analysis of enriched sample datasets, Comparing performance of different predictive models |
-| 7.5, 7.7 | section_7.5, section_7.7 | Modification localisation scores, Impact of filtering on novel phosphopeptide discovery |
-| 7.8       | section_7.8_DIANN, section_7.8_AlphaDIA  | Literature validation of identified modification sites |
+| 5.1, 5.2 | section_5.1_5.2, section_5.1, section_5.1_clustering_analysis | Method Validation and Reduction in Computational Resources, Venn diagram: figure 8 |
+| 5.3       | section_5.3_DIANN.ipynb, section_5.3_AlphaDIA.ipynb | Analysis of regular sample datasets |
+| 5.4, 5.6 | section_5.4_DIANN_5.6, section_5.4_AlphaDIA.ipynb | Analysis of enriched sample datasets, Comparing performance of different predictive models |
+| 5.5, 5.7 | section_5.5, section_5.7 | Modification localisation scores, Impact of filtering on novel phosphopeptide discovery |
+| 5.8       | section_5.8_DIANN, section_5.8_AlphaDIA  | Literature validation of identified modification sites |
 
-*Figure 16 from section 7.5 was created using DIA-NN's built-in viewer with the XICs from the timsTOF PASEF analyses (available via Zenodo).
+*Figure 18 from section 5.5 was created using DIA-NN's built-in viewer with the XICs from the timsTOF PASEF analyses (available via Zenodo).
