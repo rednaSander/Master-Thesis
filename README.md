@@ -1,5 +1,5 @@
 # Master-Thesis
-## Peptidoform2SpecLib Guide
+## ModifAInder Guide
 
 A comprehensive tool for generating in-silico spectral libraries that integrates modifications with deep learning predictions to create data driven spectral libraries for candidate modification site discovery in DIA mass spectrometry experiments.
 This tool uses a modified version of PhosphoLingo as the modification prediction engine, which has been adapted to prediction only on sites that occur on peptides that fall whithin library configurations. 
@@ -12,7 +12,7 @@ For more details on PhosphoLingo, including training different models, visit the
 This pipeline consists of two main steps:
 
 1. **PhosphoLingo Prediction**: Predicts modification sites on peptides using trained models 
-2. **Peptidoform2SpecLib**: Generates spectral libraries incorporating PhosphoLingo predictions along with fixed and variable modifications
+2. **ModifAInder**: Generates spectral libraries incorporating PhosphoLingo predictions along with fixed and variable modifications
 
 ### Features
 
@@ -29,8 +29,8 @@ This pipeline consists of two main steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/peptidoform2speclib.git
-cd peptidoform2speclib
+git clone https://github.com/yourusername/ModifAInder.git
+cd ModifAInder
 
 # Install dependencies (for each of the dependency files)
 pip install -r <dependencies.txt>
@@ -45,9 +45,9 @@ The workflow requires running two commands sequentially:
 python phospholingo predict <path to library config>
 ```
 
-2. Then, run Peptidoform2SpecLib to generate the spectral library:
+2. Then, run ModifAInder to generate the spectral library:
 ```bash
-python peptidoform2speclib.py --config <path to library config>
+python ModifAInder.py --config <path to library config>
 ```
 
 ### Configuration
