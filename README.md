@@ -29,7 +29,7 @@ This pipeline consists of two main steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ModifAInder.git
+git clone https://github.com/rednaSander/Master-Thesis
 cd ModifAInder
 
 # Install dependencies (for each of the dependency files)
